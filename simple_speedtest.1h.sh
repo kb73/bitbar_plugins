@@ -29,9 +29,9 @@
 #fi
 
 ### Regular Short Speedtest
-echo " | templateImage=$(cat ~/Documents/bitbar_plugins/support_files/speedtestIcon.txt)"
+echo " | templateImage=$(cat ~/bitbar_plugins/support_files/speedtestIcon.txt)"
 echo "---"
-output=$(python ~/Documents/bitbar_plugins/support_files/speedtest.py)
+output=$(python ~/bitbar_plugins/support_files/speedtest.py)
 ping=$(echo "$output" | grep "Hosted" | sed 's/^[^:]*: //') #Gets content after first colon
 download=$(echo "$output" | grep "Download:" | sed 's/^[^:]*: //')
 upload=$(echo "$output" | grep "Upload:" | sed 's/^[^:]*: //')

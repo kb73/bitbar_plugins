@@ -1,8 +1,8 @@
 #!/bin/bash
 
-touch ~/Documents/bitbar_plugins/support_files/notes.txt
+touch ~/bitbar_plugins/support_files/notes.txt
 
-notefile=~/Documents/bitbar_plugins/support_files/notes.txt
+notefile=~/bitbar_plugins/support_files/notes.txt
 
 refresh="open bitbar://refreshPlugin?name=notes.sh"
 
@@ -33,7 +33,7 @@ while read -r line; do
     echo "$line | color=#6F6F6F bash=$0 param1=copy param2=$lineNum param3=p terminal=false"
     echo "--Delete | bash=$0 param1=delete param2=$lineNum param3=d terminal=false"
     lineNum=$((lineNum+1))
-done < ~/Documents/bitbar_plugins/support_files/notes.txt
+done < ~/bitbar_plugins/support_files/notes.txt
 
 echo "---"
 
