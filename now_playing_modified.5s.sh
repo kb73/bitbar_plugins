@@ -67,6 +67,17 @@ if [ "$1" = "close" ]; then
     exit
 fi
 
+# toggle shuffle
+#if [ "$1" = "toggleShuffle" ]; then
+#    isShuffling=$(osascript -e "tell application \"$2\" to shuffling enabled")
+#    if [ "$isShuffling" = "true" ]; then
+#        osascript -e "set shuffling enabled to false"
+#    else
+#        osascript -e "set shuffling enabled to true"
+#    fi
+#    echo "$(osascript -e "tell application \"$2\" to shuffling enabled")"
+#fi
+
 # start outputting information to bitbar
 if [ "$playing" = "" ] && [ "$paused" = "" ]; then
 #   nothing is even paused
@@ -121,7 +132,9 @@ else
     # IMPORTANT: EXECUTION OF FUNCTIONS. PARAMETERS ARE $1 AND $2 on lines 44-65
 	echo "›› Next | bash='$0' param1=next param2=$app refresh=true terminal=false"
 	echo "‹‹ Previous | bash='$0' param1=previous param2=$app refresh=true terminal=false"
-	
+
+    echo "Shuffle | bash='$0' param1=toggleShuffle param2=$app refresh=true terminal=true"
+
 	echo "---"
 	
     # reset the name of $track to the full name for the drop down menu
