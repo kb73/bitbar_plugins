@@ -13,8 +13,6 @@
 # Dependencies: 
 #   speedtest-cli (https://github.com/sivel/speedtest-cli)
 
-source ~/.custom_commands.sh
-
 ### Speedtest with Check to see if WIFI is turned on
 #wifi=$(networksetup -getairportpower en0 | awk '{print $4}')
 #
@@ -31,9 +29,14 @@ source ~/.custom_commands.sh
 #fi
 
 ### Regular Short Speedtest
-echo " | templateImage=$(cat ~/Documents/BitBarPlugins-Unused/Support\ Images/speedtestIcon.txt)"
+echo " | templateImage=$(cat ~/Documents/bitbar_plugins/support_files/speedtestIcon.txt)"
 echo "---"
-speedtest short
+output=$(python ~/Documents/bitbar_plugins/support_files/speedtest.py)
+download=$(echo "$output" | grep "Download:" | sed 's/^[^:]*: //')
+upload=$(echo "$output" | grep "Upload:" | sed 's/^[^:]*: //')
+echo "Ping: ${ping}"
+echo "Down: ${download}"
+echo "Up: ${upload}"
 echo "---"
 
 echo "Update | refresh=true"
