@@ -28,13 +28,20 @@
 #    echo "---"
 #fi
 
-### Regular Short Speedtest
+### Displays truncated results of Ookla speedtest
+
+# Show ookla speedtest icon which is stored in speedtestIcon.txt
 echo " | templateImage=$(cat ~/bitbar_plugins/support_files/speedtestIcon.txt)"
 echo "---"
+
+# Get complete output from speedtest.py
 output=$(python ~/bitbar_plugins/support_files/speedtest.py)
+
+# Nicely formate results
 ping=$(echo "$output" | grep "Hosted" | sed 's/^[^:]*: //') #Gets content after first colon
 download=$(echo "$output" | grep "Download:" | sed 's/^[^:]*: //')
 upload=$(echo "$output" | grep "Upload:" | sed 's/^[^:]*: //')
+
 echo "Ping: ${ping}"
 echo "Down: ${download}"
 echo "Up: ${upload}"

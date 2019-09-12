@@ -8,17 +8,21 @@
 #     exit
 # fi
 
+# Function to make computer not sleep and continue processes even if lid is closed suddenly
+## Note: this will kill battery life as your computer is constantly on
 if [ "$1" = "caffeinate" ]; then
 	sudo -S pmset -b sleep 0 && sudo -S pmset -b disablesleep 1
 	osascript -e "display notification \"☕️\" with title \"Caffeinated\"" &> /dev/null
 	exit
 fi
 
+# Function to undo 'caffeinate'
 if [ "$1" = "decaffeinate" ]; then
 	sudo -S pmset -b sleep 1 && sudo -S pmset -b disablesleep 0
 	osascript -e "display notification \"💤\" with title \"Decaf\"" &> /dev/null
 fi
 
+# Check to see whether caffeine is enabled and displays the appropriate options
 if [ "$(pmset -g | grep "SleepDisabled" | grep -c "1")" -ge 1 ]; then
     echo "☕️"
     echo "---"
@@ -26,8 +30,9 @@ if [ "$(pmset -g | grep "SleepDisabled" | grep -c "1")" -ge 1 ]; then
 
 fi
 
+# Check to see whether caffeine is enabled and displays the appropriate options
 if [ "$(pmset -g | grep "SleepDisabled" | grep -c "0")" -ge 1 ]; then
-    echo "?| color=gray"
+    echo "X | color=gray"
     echo "---"
     echo "Caffeinate | bash='$0' param1=caffeinate refresh=true terminal=false";
 fi
