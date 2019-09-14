@@ -1,10 +1,22 @@
 #!/bin/bash
 
-# Ensure notes.txt exists
-touch ~/bitbar_plugins/support_files/notes.txt
+#<bitbar.title>Notes</bitbar.title>
+#<bitbar.version>v1.0</bitbar.version>
+#<bitbar.author>Kevin Bowers</bitbar.author>
+#<bitbar.author.github>kevinbowers73</bitbar.author.github>
+#<bitbar.desc>A simple plugin to store single line notes</bitbar.desc>
+#<bitbar.image>https://imgur.com/a/O07kDGe</bitbar.image>
+#<bitbar.dependencies>bash</bitbar.dependencies>
+#<bitbar.abouturl></bitbar.abouturl>
 
-# Create variable for notes.txt file so we don't have to type the full path everytime we want to use it
-notefile=~/bitbar_plugins/support_files/notes.txt
+
+
+# Variable for path of notes file
+# !!! Change the file path to whatever you want. For ease of use and plug 'n' play functionality, the default is the home directory
+notefile=~/.notes.txt
+
+# Ensures notes.txt exists
+touch $notefile
 
 # Create variable which refreshes only the notes.sh plugin
 refresh="open bitbar://refreshPlugin?name=notes.sh"
