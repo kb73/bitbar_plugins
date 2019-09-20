@@ -43,7 +43,10 @@ fi
 # Function to create new note
 if [ "$1" = "new" ]; then
     # Opens a system dialog box and saves input to notes file
-	osascript -e 'Tell application "System Events" to display dialog "New Note:" default answer "" ' -e 'text returned of result' >>$notefile
+	text=$(osascript -e 'Tell application "System Events" to display dialog "New Note:" default answer "" ' -e 'text returned of result')
+	if [ "$text" != "" ]; then
+		echo $text >>$notefile
+	fi
 	$refresh
 fi
 
