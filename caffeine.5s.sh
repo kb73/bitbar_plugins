@@ -32,7 +32,7 @@ fi
 
 # Check to see whether caffeine is enabled and displays the appropriate options
 if [ "$(pmset -g | grep "SleepDisabled" | grep -c "0")" -ge 1 ]; then
-    echo "X | color=gray"
+    echo "C | color=gray"
     echo "---"
     echo "Caffeinate | bash='$0' param1=caffeinate refresh=true terminal=false";
 fi

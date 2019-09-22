@@ -8,11 +8,11 @@ echo "---"
 #echo "---"
 
 # Check to see if wifi interface exists
-if [ "$(ifconfig | grep 'en0')" = "" ]; then
+if [ "$(ifconfig en0 | grep inet )" = "" ]; then
     wifiAddress="not connected"
 else
     wifiAddress=$(ifconfig en0 | grep 'inet ' | awk '{print $2}')
-    fi
+fi
 
 # Check to see if ethernet interface exists
 if [ "$(ifconfig | grep 'en12')" = "" ]; then
