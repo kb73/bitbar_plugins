@@ -1,1 +1,3 @@
-language: c
+deploy:
+  provider: script
+  script: bash bitbar_plugins/notes.sh
