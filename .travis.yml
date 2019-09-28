@@ -1,5 +1,8 @@
+
 language: bash
 
-deploy:
-  provider: script
-  script: bash bitbar_plugins/notes.sh
+before_script:
+    - curl -L "http://downloads.sourceforge.net/shunit2/shunit2-2.0.3.tgz" | tar zx
+
+script:
+    - bash notes.sh
