@@ -2,10 +2,7 @@
 
 #source ~/.custom_commands.sh <- this was needed when "ip" was the command that was run instead of typing out last two lines here
 
-echo "ip"
-echo "---"
-#echo "Send ip | bash=iptodrive terminal=false "
-#echo "---"
+
 
 # Check to see if wifi interface exists
 if [ "$(ifconfig en0 | grep inet )" = "" ]; then
@@ -15,12 +12,19 @@ else
 fi
 
 # Check to see if ethernet interface exists
-if [ "$(ifconfig | grep 'en12')" = "" ]; then
+if [ "$(ifconfig en5 | grep inet )" = "" ]; then
     ethernetAddress="not connected"
 else
 	## if ethernet connected, get address
-    ethernetAddress=$(ifconfig en12 | grep 'inet ' | awk '{print $2}')
+    ethernetAddress=$(ifconfig en5 | grep 'inet ' | awk '{print $2}')
 fi
+
+shortip=$(echo $wifiAddress | cut -d'.' -f 3,4)
+
+echo "$shortip | color=#0000FF"
+echo ---
+
+#echo "Send ip | bash=iptodrive terminal=false " <- ip to drive is old function that doesn't work
 
 echo -e "wifi\t\t$wifiAddress"
 echo -e "enet\t$ethernetAddress"

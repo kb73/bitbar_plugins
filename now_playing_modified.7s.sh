@@ -115,7 +115,7 @@ else
     # get artist
 	artist=$(osascript -e "tell application \"$app\" to $artist_query")
 
-#    Replace line 113 with the code below if you want only 30 characters of the song name to be displayed in the menu bar
+#    Replace collowing next active line with the code below if you want only 30 characters of the song name to be displayed in the menu bar
 #    echo "$track | color=#C70039 length=30"
 
     echo "$track | color=#C70039"
