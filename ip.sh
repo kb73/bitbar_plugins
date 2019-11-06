@@ -1,8 +1,6 @@
 #!/bin/bash
 
-#source ~/.custom_commands.sh <- this was needed when "ip" was the command that was run instead of typing out last two lines here
-
-
+#source ~/.custom_commands.sh <- this was needed when "ip" was the command that was run instead of typing out the code from the command here
 
 # Check to see if wifi interface exists
 if [ "$(ifconfig en0 | grep inet )" = "" ]; then
@@ -12,7 +10,7 @@ else
 fi
 
 # Check to see if ethernet interface exists
-if [ "$(ifconfig en5 | grep inet )" = "" ]; then
+if [ "$(ifconfig en5 2> /dev/null | grep inet )" = "" ]; then
     ethernetAddress="not connected"
 else
 	## if ethernet connected, get address
@@ -28,3 +26,5 @@ echo ---
 
 echo -e "wifi\t\t$wifiAddress"
 echo -e "enet\t$ethernetAddress"
+echo ---
+echo "Refresh | refresh=true"
