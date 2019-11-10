@@ -40,7 +40,7 @@ else
 	echo " | templateImage=$(cat ~/bitbar_plugins/support_files/speedtestIcon.txt)"
 echo "---"
     # Get complete output from speedtest.py
-	output=$(python ~/bitbar_plugins/support_files/speedtest.py)
+	output=$(python ~/bitbar_plugins/support_files/speedtest.py 2> /dev/null)
 
 	# Nicely formate results
 	ping=$(echo "$output" | grep "Hosted" | sed 's/^[^:]*: //') #Gets content after first colon
