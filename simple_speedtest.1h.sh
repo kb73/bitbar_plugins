@@ -33,7 +33,7 @@
 # Show ookla speedtest icon which is stored in speedtestIcon.txt
 
 
-if [ "$(ifconfig en0 | grep inet)" = "" ] && [ "$(ifconfig | grep 'en12')" = "" ]; then
+if [ "$(ifconfig en0 | grep inet)" = "" ] && [ "$(ifconfig | grep 'en5')" = "" ]; then
     echo "!"
     echo "---"
 else
