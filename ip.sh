@@ -8,7 +8,8 @@ wifiAddress=$(ipconfig getifaddr en0 2> /dev/null)
 if [ $? -eq 1 ]; then
 
 	# If previous command exited with an error, set 'wifiAddress' to 'not connected'
-    wifiAddress="not connected"
+    wifiAddress="no wifi"
+    
 fi
 
 # Set variable 'ethernetAddress' to the address of interface en5 (known to be ethernet iface for this mac).
