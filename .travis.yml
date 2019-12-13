@@ -11,4 +11,4 @@
      - bash caffeine.5s.sh
      - bash ip.5m.sh
      - bash now_playing_modified.7s.sh
-     - bash simple_speetest.1h.sh
+     - bash simple_speedtest.1h.sh
