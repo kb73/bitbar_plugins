@@ -58,8 +58,6 @@ echo -e "wifi\t\t$wifiAddress"
 echo -e "enet\t$ethernetAddress"
 echo ---
 echo "Refresh | refresh=true"
-echo "ip updated: $(date)" >> ~/Desktop/bitbar_update_log.txt
-
 
 echo ---
 echo "Edit plugin | bash=$0 param1=edit terminal=false "
