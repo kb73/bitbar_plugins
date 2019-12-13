@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# <bitbar.title>Now playing</bitbar.title>
-# <bitbar.version>v1.1</bitbar.version>
-# <bitbar.author>Adam Kenyon</bitbar.author>
-# <bitbar.author.github>adampk90</bitbar.author.github>
-# <bitbar.desc>Shows and controls the music that is now playing. Currently supports Spotify, iTunes, and Vox.</bitbar.desc>
-# <bitbar.image>https://pbs.twimg.com/media/CbKmTS7VAAA84VS.png:small</bitbar.image>
+# <bitbar.title>Now Playing Modified</bitbar.title>
+# <bitbar.version>v1.0</bitbar.version>
+# <bitbar.author>Kevin Bowers</bitbar.author>
+# <bitbar.author.github>kb73</bitbar.author.github>
+# <bitbar.desc>Shows and controls the music that is now playing. Modified from plugin by Adam Kenyon</bitbar.desc>
+# <bitbar.image>https://i.imgur.com/Xv7HYGf.png</bitbar.image>
 # <bitbar.dependencies></bitbar.dependencies>
 # <bitbar.abouturl></bitbar.abouturl>
 
@@ -67,17 +67,6 @@ if [ "$1" = "close" ]; then
     exit
 fi
 
-# toggle shuffle
-#if [ "$1" = "toggleShuffle" ]; then
-#    isShuffling=$(osascript -e "tell application \"$2\" to shuffling enabled")
-#    if [ "$isShuffling" = "true" ]; then
-#        osascript -e "set shuffling enabled to false"
-#    else
-#        osascript -e "set shuffling enabled to true"
-#    fi
-#    echo "$(osascript -e "tell application \"$2\" to shuffling enabled")"
-#fi
-
 # start outputting information to bitbar
 if [ "$playing" = "" ] && [ "$paused" = "" ]; then
 #   nothing is even paused
@@ -115,7 +104,7 @@ else
     # get artist
 	artist=$(osascript -e "tell application \"$app\" to $artist_query")
 
-#    Replace collowing next active line with the code below if you want only 30 characters of the song name to be displayed in the menu bar
+#    Replace following next active line with the code below if you want only 30 characters of the song name to be displayed in the menu bar
 #    echo "$track | color=#C70039 length=30"
 
     echo "$track | color=#C70039"
@@ -132,8 +121,6 @@ else
     # IMPORTANT: EXECUTION OF FUNCTIONS. PARAMETERS ARE $1 AND $2 on lines 44-65
 	echo "›› Next | bash='$0' param1=next param2=$app refresh=true terminal=false"
 	echo "‹‹ Previous | bash='$0' param1=previous param2=$app refresh=true terminal=false"
-
-    echo "Shuffle | bash='$0' param1=toggleShuffle param2=$app refresh=true terminal=true"
 
 	echo "---"
 	
