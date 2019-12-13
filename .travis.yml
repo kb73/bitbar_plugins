@@ -5,4 +5,10 @@
      - curl -L "http://downloads.sourceforge.net/shunit2/shunit2-2.0.3.tgz" | tar zx
 
  script:
-     - bash notes.sh
+     - bash notes.1d.sh
+     - bash batterpercentage.3s.sh
+     - bash caffeine.5s.sh
+     - bash caffeine.5s.sh
+     - bash ip.5m.sh
+     - bash now_playing_modified.7s.sh
+     - bash simple_speetest.1h.sh
