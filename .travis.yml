@@ -6,7 +6,7 @@
 
  script:
      - bash notes.1d.sh
-     - bash batterpercentage.3s.sh
+     - bash batterypercentage.3s.sh
      - bash caffeine.5s.sh
      - bash caffeine.5s.sh
      - bash ip.5m.sh
