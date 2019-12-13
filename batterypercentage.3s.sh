@@ -15,3 +15,9 @@ else
 	fi
 fi
 echo "$pct% | size=13 color=$color"
+
+echo ---
+echo "Edit plugin | bash=$0 param1=edit terminal=false "
+if [ "$1" = "edit" ]; then
+    open ~/bitbar_plugins/batterypercentage.3s.sh
+fi

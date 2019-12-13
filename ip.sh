@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 #source ~/.custom_commands.sh <- this was needed when "ip" was the command that was run instead of typing out the code from the command here
 
 # Set variable 'wifiAddress' to the address of interface en0 (known to be ethernet iface for this mac).
@@ -61,3 +59,10 @@ echo -e "enet\t$ethernetAddress"
 echo ---
 echo "Refresh | refresh=true"
 echo "ip updated: $(date)" >> ~/Desktop/bitbar_update_log.txt
+
+
+echo ---
+echo "Edit plugin | bash=$0 param1=edit terminal=false "
+if [ "$1" = "edit" ]; then
+    open ~/bitbar_plugins/ip.sh
+fi

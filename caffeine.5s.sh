@@ -36,3 +36,9 @@ if [ "$(pmset -g | grep "SleepDisabled" | grep -c "0")" -ge 1 ]; then
     echo "---"
     echo "Caffeinate | bash='$0' param1=caffeinate refresh=true terminal=false";
 fi
+
+echo ---
+echo "Edit plugin | bash=$0 param1=edit terminal=false "
+if [ "$1" = "edit" ]; then
+    open ~/bitbar_plugins/caffeine.5s.sh
+fi
