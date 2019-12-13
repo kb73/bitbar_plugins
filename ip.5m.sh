@@ -62,5 +62,5 @@ echo "Refresh | refresh=true"
 echo ---
 echo "Edit plugin | bash=$0 param1=edit terminal=false "
 if [ "$1" = "edit" ]; then
-    open ~/bitbar_plugins/ip.sh
+    open ~/bitbar_plugins/ip.5m.sh
 fi
