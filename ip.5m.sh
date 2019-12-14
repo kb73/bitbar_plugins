@@ -38,7 +38,8 @@ if [ "$1" = "save" ]; then
         while [ "$(ifconfig en0 | grep inet)" = "" ]; do
             sleep 2
         done
-        wifiAddress=$(ipconfig getifaddr en0)
+		#wifiAddress=$(ipconfig getifaddr en0)  <- apparently this updates after ifconfig, so there's a possibility this is empty even though there is a given ip address (had it happen once)
+        wifiAddress=$(ifconfig en0 | grep 'inet ' | awk '{print $2}')
     fi
     echo $wifiAddress > ~/google_drive/ip.txt
     open bitbar://refreshPlugin?name=caffeine.5s.sh
