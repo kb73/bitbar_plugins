@@ -19,7 +19,7 @@ notefile=~/.notes.txt
 touch $notefile
 
 # Create variable which refreshes only the notes.sh plugin
-refresh="open bitbar://refreshPlugin?name=notes.sh"
+refresh="open bitbar://refreshPlugin?name=notes.1d.sh"
 
 # Function to delete the selected note
 if [ "$1" = "delete" ]; then
