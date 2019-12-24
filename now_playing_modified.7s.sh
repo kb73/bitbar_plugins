@@ -145,5 +145,5 @@ done
 echo ---
 echo "Edit plugin | bash=$0 param1=edit terminal=false "
 if [ "$1" = "edit" ]; then
-    open ~/bitbar_plugins/now_playing_modified.7s.sh
+	open "${0}"
 fi

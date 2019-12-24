@@ -72,9 +72,10 @@ echo "Clear Notes | color=red"
 echo "--I'm sure | bash=$0 param1=clear terminal=false"
 fi
 
+
+
 echo ---
 echo "Edit plugin | bash=$0 param1=edit terminal=false "
 if [ "$1" = "edit" ]; then
-    open ~/bitbar_plugins/notes.1d.sh
+    open "${0}"
 fi
-
