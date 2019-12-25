@@ -48,6 +48,3 @@ echo "Update | refresh=true"
 
 echo ---
 echo "Edit plugin | bash=$0 param1=edit terminal=false "
-if [ "$1" = "edit" ]; then
-	open "${0}"
-fi
