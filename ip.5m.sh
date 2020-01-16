@@ -88,7 +88,7 @@ if [ "$automaticOffText" == "Enable" ]; then
 else
     echo "Wifi auto off: Enabled"
 fi
-echo "$automaticOffText auto off | bash=$0 param1=toggleAutomaticOff terminal=false refresh=true "
+echo "$automaticOffText | bash=$0 param1=toggleAutomaticOff terminal=false refresh=true "
 
 echo ---
 
