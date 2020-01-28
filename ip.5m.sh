@@ -43,6 +43,7 @@ ethernetAddress=$(ipconfig getifaddr en5 2> /dev/null)
 # If previous command exited with an error, set 'ethernetAddress' to 'not connected'
 if [ $? -eq 1 ]; then
     ethernetAddress="not connected"
+    networksetup -setairportpower en0 on
 else
     if [ "$isEnabled" == "true" ]; then
         networksetup -setairportpower en0 off
